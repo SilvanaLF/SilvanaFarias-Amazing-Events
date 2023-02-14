@@ -1,21 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
-/* BOOTSTRAP STYLES */
-
-
-
-/* MY STYLES */
-
-
-
-
-
-
-
-
-
-
-
 
 /* Small devices (landscape phones, 576px and up */
 @media (min-width: 576px) { }
@@ -55,10 +39,7 @@ body{
     color:#e0046c;
 }
 
-.btn{
-    color: #e0046c;
-}
-main{
+.container-main{
     height: 80vh;
 }
 footer {
