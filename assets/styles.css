@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+/* BOOTSTRAP STYLES */
+
+
+
+/* MY STYLES */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Small devices (landscape phones, 576px and up */
+@media (min-width: 576px) { }
+/* 
+Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { }
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: #eadefa;
+}
+.navbar{
+    height: 10vh;
+    background-color: #ededf2;
+}
+
+.navbar-nav > li > a:hover{
+    color:#e0046c;
+}
+
+.btn{
+    color: #e0046c;
+}
+main{
+    height: 80vh;
+}
+footer {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ededf2;
+}
+
+
+
+
+
+
+
