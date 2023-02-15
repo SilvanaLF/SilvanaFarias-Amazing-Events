@@ -39,9 +39,16 @@ body{
     color:#e0046c;
 }
 
-.container-main{
-    height: 80vh;
+.carrouselh1{
+    color: #e0046c;
+    background-color: #ededf2;
 }
+
+.card img{
+    height: 15rem;
+    object-fit: cover;
+}
+
 footer {
     height: 10vh;
     width: 100%;
