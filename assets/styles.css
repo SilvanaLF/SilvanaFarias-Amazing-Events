@@ -35,7 +35,10 @@ body{
     background-color: #ededf2;
 }
 
-.navbar-nav > li > a:hover{
+.nav-item {
+    color: black;
+}
+.nav-item a:hover{
     color:#e0046c;
 }
 
@@ -53,9 +56,10 @@ footer {
     height: 10vh;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #ededf2;
 }
+
 
 
 

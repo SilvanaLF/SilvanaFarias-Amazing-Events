@@ -15,38 +15,30 @@
 <body>
     <!-- Menu -->
     <header>
-        <nav class="navbar navbar-expand-md p-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/Logo_Amazing_Events.png" alt="logo" height="40">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-flex justify-content-lg-center" id="navbarNav">
-                    <ul class="navbar-nav d-flex justify-content-around w-100">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./upcoming-events.html">Upcoming Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./past-events.html">Past Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./stats.html">Stats</a>
-                        </li>
-                        <!-- <li class="nav-item text-black">
-                            <a class="nav-link" href="./details.html">Details</a>
-                        </li> -->
+        <nav class="navbar d-flex navbar-expand-lg justify-content-between p-3">
+            <img class="navbar-brand d-flex" src="./assets/img/Logo_Amazing_Events.png" alt="Logo" height="45">
 
-                    </ul>
-                </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburguesa">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="nav d-flex justify-content-end collapse navbar-collapse" , id="hamburguesa">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./upcoming_events.html">Upcoming Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./past_events.html">Past Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./stats.html">Stats</a>
+                </li>
             </div>
         </nav>
 
@@ -120,23 +112,21 @@
 
 
     </main>
-    <footer>
-        <nav class="navbar-footer d-flex justify-content-between align-items-center w-50">
-            <div class="container">
-                <a class="navbar-rrss" href="#">
-                    <img src="./assets/instagram.svg" alt="Instagram" width="30" height="24">
-                </a>
-                <a class="navbar-rrss" href="#">
-                    <img src="./assets/facebook.svg" alt="Facebook" width="30" height="24">
-                </a>
-                <a class="navbar-rrss" href="#">
-                    <img src="./assets/whatsapp.svg" alt="Whatsapp" width="30" height="24">
-                </a>
-            </div>
-            <div class="container-cohort">
-                <h6>COHORT</h6>
-            </div>
-        </nav>
+    <footer class="d-flex fixed-bottom justify-content-between mt-auto p-3">
+        <div>
+            <a href="#" class="instagram">
+                <img src="./assets/img/instagram.svg" alt="instagram">
+            </a>
+            <a href="#" class="facebook">
+                <img src="./assets/img/facebook.svg" alt="facebook">
+            </a>
+            <a href="#" class="whatsapp">
+                <img src="./assets/img/whatsapp.svg" alt="whatsapp">
+            </a>
+        </div>
+        <div class="container-cohort">
+            <h6>COHORT</h6>
+        </div>
     </footer>
 
 
