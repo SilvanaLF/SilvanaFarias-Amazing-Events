@@ -15,40 +15,34 @@
 <body>
     <!-- Menu -->
     <header>
-        <nav class="navbar navbar-expand-md p-4">
+        <nav class="navbar navbar-expand-md">
             <div class="container-fluid">
+
+                <!-- logotipo Amazing Events -->
                 <a class="navbar-brand" href="#">
                     <img src="./assets/img/Logo_Amazing_Events.png" alt="logo" height="40">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <!-- Botón del menú -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse d-flex justify-content-lg-center" id="navbarNav">
-                    <ul class="navbar-nav d-flex justify-content-around w-100">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./upcoming-events.html">Upcoming Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./past-events.html">Past Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./stats.html">Stats</a>
-                        </li>
-                        <!-- <li class="nav-item text-black">
-                        <a class="nav-link" href="./details.html">Details</a>
-                    </li> -->
 
+                <!-- Elementos del menu -->
+
+
+                <div class="collapse navbar-collapse" id="menu">
+
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./upcoming-events.html">Upcoming Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./past-events.html">Past Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./stats.html">Stats</a></li>
                     </ul>
+
                 </div>
-            </div>
-        </nav>
 
     </header>
 
@@ -102,7 +96,7 @@
                 <div class="col">
 
                     <table class="table table-bordered">
-                        <h3 class="table-info">EVENTS ESTATISTICS</h3>
+                        <h5 class="table-info">EVENTS ESTATISTICS</h5>
                         <thead>
                             <tr class="table-secondary">
                                 <th>Events with the highest porcentages of attendance</th>
@@ -120,7 +114,7 @@
                     </table>
 
                     <table class="table table-bordered">
-                        <h3 class="table-info">UPCOMING EVENTS ESTATISTICS BY CATEGORY</h3>
+                        <h5 class="table-info">UPCOMING EVENTS ESTATISTICS BY CATEGORY</h5>
                         <thead>
                             <tr class="table-secondary">
                                 <th>Categories</th>
@@ -149,7 +143,7 @@
 
                     <table class="table table-bordered">
                         <table class="table table-bordered">
-                            <h3 class="table-info">PAST EVENTS ESTATISTICS BY CATEGORY</h3>
+                            <h5 class="table-info">PAST EVENTS ESTATISTICS BY CATEGORY</h5>
                             <thead>
                                 <tr class="table-secondary">
                                     <th>Categories</th>

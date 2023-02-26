@@ -15,40 +15,34 @@
 <body>
     <!-- Menu -->
     <header>
-        <nav class="navbar navbar-expand-md p-4">
+        <nav class="navbar navbar-expand-md">
             <div class="container-fluid">
+
+                <!-- logotipo Amazing Events -->
                 <a class="navbar-brand" href="#">
                     <img src="./assets/img/Logo_Amazing_Events.png" alt="logo" height="40">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <!-- Botón del menú -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse d-flex justify-content-lg-center" id="navbarNav">
-                    <ul class="navbar-nav d-flex justify-content-around w-100">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./upcoming-events.html">Upcoming Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./past-events.html">Past Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./stats.html">Stats</a>
-                        </li>
-                        <!-- <li class="nav-item text-black">
-                        <a class="nav-link" href="./details.html">Details</a>
-                    </li> -->
 
+                <!-- Elementos del menu -->
+
+
+                <div class="collapse navbar-collapse" id="menu">
+
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./upcoming-events.html">Upcoming Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./past-events.html">Past Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./stats.html">Stats</a></li>
                     </ul>
+
                 </div>
-            </div>
-        </nav>
 
     </header>
 
@@ -137,86 +131,98 @@
 
         <!--Cards-->
 
-        <section class="d-flex flex-wrap justify-content-center">
-            <div class="card-group w-75 gap-5 mb-5">
-                <div class="card">
-                    <img src="./assets/img/Costume_Party.jpg" class="card-img-top" alt="party">
+        <div class="row d-flex flex-wrap mx-5 gap-5 p-5">
+
+
+            <!--Tarjeta 1-->
+
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/Cinema.jpg" alt="cine">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                        <h1>Card title</h1>
+                        <p class="card-text"> Aquí va la descripción del evento.</p>
                         <p class="card-text"><small class="text-muted">Price $0000</small></p>
-                        <button type="button" class="btn btn-outline-success">Keep calm, Mabel</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/img/Food_Fair.jpg" class="card-img-top" alt="food-fair">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.
-                        </p>
-                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
-                        <button type="button" class="btn btn-outline-success">Keep calm, Mabel</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/img/Marathon.jpg" class="card-img-top" alt="marathon">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height
-                            action.</p>
-                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
-                        <button type="button" class="btn btn-outline-success">Keep calm, Mabel</button>
+                        <button type="button" class="btn btn-outline-success">Link</button>
                     </div>
                 </div>
             </div>
-            <div class="card-group w-75 gap-5 mb-5">
-                <div class="card">
-                    <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="cinema">
+
+            <!--Tarjeta 2-->
+
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/Costume_Party.jpg" alt="party">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                        <h1>Card title</h1>
+                        <p class="card-text"> Aquí va la descripción del evento.</p>
                         <p class="card-text"><small class="text-muted">Price $0000</small></p>
-                        <button type="button" class="btn btn-outline-success">Keep calm, Mabel</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/img/Museum_Tour.jpg" class="card-img-top" alt="museum-tour">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.
-                        </p>
-                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
-                        <button type="button" class="btn btn-outline-success">Keep calm, Mabel</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./assets/img/Music_Concert.jpg" class="card-img-top" alt="music-concert">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height
-                            action.</p>
-                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
-                        <button type="button" class="btn btn-outline-success">Keep calm, Mabel</button>
+                        <button type="button" class="btn btn-outline-success">Link</button>
                     </div>
                 </div>
             </div>
-        </section>
 
+            <!--Tarjeta 3-->
 
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/Food_Fair.jpg" alt="food">
+                    <div class="card-body">
+                        <h1>Card title</h1>
+                        <p class="card-text"> Aquí va la descripción del evento.</p>
+                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
+                        <button type="button" class="btn btn-outline-success">Link</button>
+                    </div>
+                </div>
+            </div>
 
+            <!--Tarjeta 4-->
 
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/Marathon.jpg" alt="marathon">
+                    <div class="card-body">
+                        <h1>Card title</h1>
+                        <p class="card-text"> Aquí va la descripción del evento.</p>
+                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
+                        <button type="button" class="btn btn-outline-success">Link</button>
+                    </div>
+                </div>
+            </div>
 
+            <!--Tarjeta 5-->
+
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/Museum_Tour.jpg" alt="museum">
+                    <div class="card-body">
+                        <h1>Card title</h1>
+                        <p class="card-text"> Aquí va la descripción del evento.</p>
+                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
+                        <button type="button" class="btn btn-outline-success">Link</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tarjeta 6-->
+
+            <div class="col ml-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/Music_Concert.jpg" alt="concert">
+                    <div class="card-body">
+                        <h1>Card title</h1>
+                        <p class="card-text"> Aquí va la descripción del evento.</p>
+                        <p class="card-text"><small class="text-muted">Price $0000</small></p>
+                        <button type="button" class="btn btn-outline-success">Link</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
     </main>
+
     <footer>
         <nav class="navbar-footer d-flex justify-content-between align-items-center w-50">
             <div class="container">
