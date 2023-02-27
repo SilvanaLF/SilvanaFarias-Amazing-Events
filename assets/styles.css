@@ -21,6 +21,7 @@ body{
 
 .nav-item {
     color: black;
+    font-size: large;
 }
 .nav-item a:hover{
     color:#e0046c;
@@ -30,6 +31,31 @@ body{
     color: #e0046c;
     background-color: #ededf2;
 }
+
+.check {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+
+  input[type="checkbox"] {
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+ @media (max-width: 768px) {
+    .check{
+      flex-direction: column;
+    }
+    
+    input[type="checkbox"] {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+ 
+  }
 
 .card img{
     height: 15rem;
