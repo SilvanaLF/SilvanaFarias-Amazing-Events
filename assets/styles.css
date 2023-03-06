@@ -44,6 +44,10 @@ body{
     margin-right: 5px;
     margin-left: 5px;
   }
+  
+  .card{
+    width: 18rem;
+  }
 
  @media (max-width: 768px) {
     .check{
