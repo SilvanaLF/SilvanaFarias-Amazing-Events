@@ -16,7 +16,7 @@ cardEvent.innerHTML += `<div class="col ml-5">
                         <h4>${element.name}</h4>
                         <p class="card-text">${element.description}</p>
                         <p class="card-text"><small class="text-muted">${element.price}</small></p>
-                        <button type="button" class="btn btn-outline-success">Link</button>
+                        <a href="./details.html?id=${element.id}" class="btn btn details align-self-end">Details</a>
                     </div>
                 </div>
             </div>`;
@@ -115,7 +115,6 @@ function verificarSeleccion(){
 
 
 
-//URL a Details
 
 
 
