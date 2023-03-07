@@ -25,7 +25,11 @@ cardEvent.innerHTML += `<div class="col ml-5">
             </div>`;
 } 
 
-//Checkboxes & Search
+//Checkbox & Search
+
+//Checkbox
+//Traer dinámicamente los nombres de las categorías en cada chexbox
+
 
 const busqueda = document.getElementById('categories');
 
@@ -41,11 +45,11 @@ const duplicateCategory = newCategory.filter((cat, indice) => {
 
 const fragment01 = new DocumentFragment();
 
-for (let elemento of duplicateCategory){
+for (let element of duplicateCategory){
     let div = document.createElement('div');
     div.innerHTML += `<div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" value="option">
-                        <label class="form-check-label" for="checkbox">${elemento} </label>
+                        <input class="form-check-input" type="checkbox" id="${element}" value=${element}>
+                        <label class="form-check-label" for=${element}>${element} </label>
                     </div>`
                     
     fragment01.appendChild(div);
@@ -63,16 +67,20 @@ arrayHijos.push(checks);
 const arrayHijos2 = Array.prototype.slice.call(arrayHijos[0]);
 const etiquetas = Array.prototype.slice.call(document.getElementsByClassName('form-check-label'));
 
-const checkboxes = document.querySelectorAll('input[type=checkbox]')
+//Escuchar eventos por categorías(filtros)
 
-checkboxes.forEach( checkbox  => { 
-     checkbox.addEventListener('change', verificarSeleccion) 
-     })
+const checkboxes = document.querySelectorAll('input[type=checkbox]');
+console.log(checkboxes)
+
+checkboxes.forEach( checkbox  => {checkbox.addEventListener('change', verificarSeleccion)});
+
 function verificarSeleccion(){
-     let inputheck = Array.from(checkboxes).filter(checkbox => checkbox.checked)
-     console.log(inputheck);
+     let inputcheck = Array.from(checkboxes).filter(checkbox => checkbox.checked)
+     console.log(inputcheck);
+     let valorCategories = inputcheck.map(input => input.value)
+     console.log(valorCategories);
+     let eventosFiltros = dataEvents.events.filter(evento => valorCategories.includes(evento.category));
+     console.log(eventosFiltros)
 }
 
-console.log(etiquetas);
-console.log(arrayHijos2);
-console.log(tarjetas);
+
