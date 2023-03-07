@@ -113,6 +113,13 @@ function verificarSeleccion(){
 // });
 
 
+
+
+//URL a Details
+
+
+
+
  
 
 
