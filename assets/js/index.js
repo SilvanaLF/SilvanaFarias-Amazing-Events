@@ -1,5 +1,4 @@
-
-//Cards
+//CARDS 
 
 let tarjetas = [];
 let fragment = document.createDocumentFragment();
@@ -67,9 +66,13 @@ const etiquetas = Array.prototype.slice.call(document.getElementsByClassName('fo
 
 //Escuchar eventos por categorías(filtros)
 
+busqueda.addEventListener('click', imprimirPorConsola)
+    
+function imprimirPorConsola(e){
+     console.log(e.target)
+ }
+
 const checkboxes = document.querySelectorAll('input[type=checkbox]');
-
-
 checkboxes.forEach( checkbox  => {checkbox.addEventListener('change', verificarSeleccion)});
 
 function verificarSeleccion(){
@@ -77,15 +80,40 @@ function verificarSeleccion(){
      console.log(inputcheck);
      let valorCategories = inputcheck.map(input => input.value)
      console.log(valorCategories);
-     let eventosFiltros = dataEvents.events.filter(evento => valorCategories.includes(evento.category));
+     let eventosFiltros = dataEvents.events.filter(evento => valorCategories.includes(evento.category.split(' ').join('_')));
      console.log(eventosFiltros)
+     filteredCards(eventosFiltros, cardEvent);
 }
 
-// console.log(etiquetas);
-// console.log(arrayHijos2);
-// console.log(tarjetas);
+//CARDS DE CATEGORIAS FILTRADAS
 
-//Search 
+
+function filteredCards(array, cardEvent){
+    const container = cardEvent;
+    container.innerHTML=''
+    let fragment = document.createDocumentFragment()
+
+    for(let element of array){
+        let tarjetas = document.createElement('div');
+        tarjetas.innerHTML =  `<div class="col ml-5">
+        <div class="card" style="width: 18rem;">
+            <img src=${element.image} alt="cine">
+            <div class="card-body">
+                <h4>${element.name}</h4>
+                <p class="card-text">${element.description}</p>
+                <p class="card-text"><small class="text-muted">${element.price}</small></p>
+                <a href="./details.html?id=${element._id}" class="btn btn details align-self-end">Details</a>
+            </div>
+        </div>
+    </div>`
+    fragment.appendChild(tarjetas)
+    }
+    container.appendChild(fragment)
+}
+
+  
+
+//SEARCH
 
 
 const searchInput = document.getElementById("searchInput")
@@ -104,7 +132,12 @@ function filterTexto (textoDeBusqueda){
 }
 
 
-//Filtros cruzados
+//FILTROS CRUZADOS
+
+
+
+
+
 
 
 
