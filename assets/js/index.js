@@ -1,3 +1,4 @@
+
 //Cards
 
 let tarjetas = [];
@@ -16,7 +17,7 @@ cardEvent.innerHTML += `<div class="col ml-5">
                         <h4>${element.name}</h4>
                         <p class="card-text">${element.description}</p>
                         <p class="card-text"><small class="text-muted">${element.price}</small></p>
-                        <a href="./details.html?id=${element.id}" class="btn btn details align-self-end">Details</a>
+                        <a href="./details.html?id=${element._id}" class="btn btn details align-self-end">Details</a>
                     </div>
                 </div>
             </div>`;
@@ -67,7 +68,7 @@ const etiquetas = Array.prototype.slice.call(document.getElementsByClassName('fo
 //Escuchar eventos por categorías(filtros)
 
 const checkboxes = document.querySelectorAll('input[type=checkbox]');
-console.log(checkboxes)
+
 
 checkboxes.forEach( checkbox  => {checkbox.addEventListener('change', verificarSeleccion)});
 
@@ -84,33 +85,27 @@ function verificarSeleccion(){
 // console.log(arrayHijos2);
 // console.log(tarjetas);
 
-//Search - Revisar
+//Search 
 
-// // Obtener la lista de eventos, el elemento de entrada de búsqueda y el botón de búsqueda
-// const eventList = document.getElementById('event-list');
-// const searchInput = document.getElementById('search-input');
-// const searchButton = document.getElementById('search-button');
 
-// // Agregar evento de clic en el botón de búsqueda
-// searchButton.addEventListener('click', () => {
-//   // Obtener el texto ingresado en el campo de búsqueda
-//   const searchText = searchInput.value.toLowerCase();
+const searchInput = document.getElementById("searchInput")
+//console.log(searchInput)
 
-//   // Iterar a través de cada evento en la lista
-//   eventList.querySelectorAll('.event').forEach(event => {
-//     // Obtener el nombre del evento
-//     const eventName = event.getAttribute('data-name').toLowerCase();
+searchInput.addEventListener('keyup', () =>{
+    const textoDeBusqueda = searchInput.value
+    console.log(textoDeBusqueda)
+    console.log(filterTexto(textoDeBusqueda))
+})
 
-//     // Comprobar si el nombre del evento contiene el texto de búsqueda
-//     if (eventName.includes(searchText)) {
-//       // Mostrar el evento si coincide con la búsqueda
-//       event.style.display = 'block';
-//     } else {
-//       // Ocultar el evento si no coincide con la búsqueda
-//       event.style.display = 'none';
-//     }
-//   });
-// });
+function filterTexto (textoDeBusqueda){
+    if (textoDeBusqueda == '') return dataEvents.events
+    let nuevoArray = dataEvents.events.filter(elemento => elemento.name.toLowerCase().includes(textoDeBusqueda.toLowerCase().trim()))
+    return nuevoArray
+}
+
+
+//Filtros cruzados
+
 
 
 

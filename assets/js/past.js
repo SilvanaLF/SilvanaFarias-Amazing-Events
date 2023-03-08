@@ -19,7 +19,7 @@ cardEvent.innerHTML += `<div class="col ml-5">
                         <h4>${element.name}</h4>
                         <p class="card-text">${element.description}</p>
                         <p class="card-text"><small class="text-muted">${element.price}</small></p>
-                        <a href="./details.html?id=${element.id}" class="btn btn details align-self-end">Details</a>
+                        <a href="./details.html?id=${element._id}" class="btn btn details align-self-end">Details</a>
                     </div>
                 </div>
             </div>`;
