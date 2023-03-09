@@ -65,7 +65,6 @@ function checkbox(events) {
     const arrayCategoria = events.map(event => event.category)
     const theCategory = [...new Set(arrayCategoria)]
 
-
 let fragmentCheck = document.createDocumentFragment()
 
  for(let cat of theCategory){
@@ -96,8 +95,7 @@ const checkboxes = document.querySelectorAll('input[type=checkbox]')
  function mostrarSeleccion(eventos){
     inputValues = Array.from(checkboxes).filter(check => check.checked).map(input => input.value)
     allFilter(data.events)
-
- }
+}
  
  function arrayFilter(checkArray, events){
     if(checkArray == 0){

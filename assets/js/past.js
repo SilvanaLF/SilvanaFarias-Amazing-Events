@@ -28,10 +28,9 @@ for(let element of eventos){
         container.appendChild(div)
     }
 }
+
 const card_pastEvents = document.getElementById('card_past')
-
 let fragment = document.createDocumentFragment()
-
 const fechaActual = Date.parse(data.currentDate);
 
 for(let element of data.events){
@@ -63,21 +62,18 @@ function checkbox(events) {
 
     const arrayCategoria = events.map(event => event.category)
     const theCategory = [...new Set(arrayCategoria)]
+    let fragmentCheck = document.createDocumentFragment()
 
-
-let fragmentCheck = document.createDocumentFragment()
-
- for(let cat of theCategory){
-     let div = document.createElement('div')
-     div.className="form-check form-check-inline"
-     div.style.color="#e0046c"
-     div.innerHTML = `<input class="form-check-input" type="checkbox" id=${cat.split(' ').join('_')} value=${cat.split(' ').join('_')}>
-     <label class="form-check-label" style="color: #e0046c" for=${cat.split(' ').join('_')}>${cat}</label>`
+    for(let cat of theCategory){
+        let div = document.createElement('div')
+        div.className="form-check form-check-inline"
+        div.style.color="#e0046c"
+        div.innerHTML = `<input class="form-check-input" type="checkbox" id=${cat.split(' ').join('_')} value=${cat.split(' ').join('_')}>
+        <label class="form-check-label" style="color: #e0046c" for=${cat.split(' ').join('_')}>${cat}</label>`
          fragmentCheck.appendChild(div)
  }
- return fragmentCheck
+    return fragmentCheck
  }
-
 check_category.appendChild(checkbox(data.events))
 
 //EVENTOS CHECKBOX
@@ -85,32 +81,31 @@ check_category.appendChild(checkbox(data.events))
 
 let inputValues = []
 let textSearch = ""
-
 const checkboxes = document.querySelectorAll('input[type=checkbox]')
 
- checkboxes.forEach(checkbox => {
+checkboxes.forEach(checkbox => {
      checkbox.addEventListener('change', mostrarSeleccion)
- })
+})
 
- function mostrarSeleccion(eventos){
+function mostrarSeleccion(eventos){
     inputValues = Array.from(checkboxes).filter(check => check.checked).map(input => input.value)
     allFilter(data.events)
 
- }
+}
  
- function arrayFilter(checkArray, events){
+function arrayFilter(checkArray, events){
     if(checkArray == 0){
         return events
     }else{
     const eventosFiltrados = events.filter(objeto => checkArray.includes(objeto.category.split(' ').join('_')))
         return eventosFiltrados
     }
- }
+}
 
 //SEARCH
 
-
 function filterSearch(string, events){
+    
     if(string == ""){
        return events
     }else{         
@@ -128,7 +123,7 @@ allFilter(data.events)
 //FILTROS CRUZADOS
 
 function allFilter(){
- const eventosChequeados = arrayFilter(inputValues, data.events)
- const eventosBuscados = filterSearch(textSearch, eventosChequeados)
- cardCreate(eventosBuscados)
+    const eventosChequeados = arrayFilter(inputValues, data.events)
+    const eventosBuscados = filterSearch(textSearch, eventosChequeados)
+    cardCreate(eventosBuscados)
 }
