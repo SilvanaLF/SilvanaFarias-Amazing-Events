@@ -1,3 +1,74 @@
+
+const traerDatos = async () => {
+    try{
+        const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+        console.log(response)
+        let data = await response.json()
+        console.log(data)
+        let events = data.events
+        console.log(events)
+        check_category.appendChild(checkbox(data.events))
+        createEventCards(data)
+        
+        //Check evento
+        let inputValues = []
+        let textSearch = ""
+
+        const checkboxes = document.querySelectorAll('input[type=checkbox]')
+
+        checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', mostrarSeleccion)
+        })
+
+        function mostrarSeleccion(eventos){
+        inputValues = Array.from(checkboxes).filter(check => check.checked).map(input => input.value)
+        allFilter(data.events)
+        }
+ 
+        function arrayFilter(checkArray, events){
+        if(checkArray == 0){
+        return events
+        }else{
+        const eventosFiltrados = events.filter(objeto => checkArray.includes(objeto.category.split(' ').join('_')))
+        return eventosFiltrados
+        }
+        }
+
+        // Search
+
+        function filterSearch(string, events){
+        if(string == ""){
+        return events
+        }else{         
+        let nuevoArray = events.filter(element => element.name.toLowerCase().includes(textSearch.toLowerCase().trim()))
+        return nuevoArray
+        }
+        }
+
+        // Search Evento
+
+        const inputForm = document.getElementById('inputForm');
+        inputForm.addEventListener('keyup', (e) => {
+        textSearch = inputForm.value
+        allFilter(data.events)
+        })
+
+        // Filtros Cruzados
+
+        function allFilter(){
+            const eventosChequeados = arrayFilter(inputValues, data.events)
+            const eventosBuscados = filterSearch(textSearch, eventosChequeados)
+            cardCreate(eventosBuscados)
+           }
+
+
+
+    }catch(error) {
+        console.error('Error al traer datos')
+    }
+}
+traerDatos()
+
 // CARDS
 
 function cardCreate(eventos){
@@ -29,30 +100,34 @@ for(let element of eventos){
     }
 }
 
-const card_pastEvents = document.getElementById('card_past')
-let fragment = document.createDocumentFragment()
-const fechaActual = Date.parse(data.currentDate);
+//
 
-for(let element of data.events){
-    
-    let proximasFechas = Date.parse(element.date)
-
-    if(proximasFechas < fechaActual){
-    let div = document.createElement('div')
+function createEventCards(data) {
+    const card_up = document.getElementById('card_past')
+    let fragment = document.createDocumentFragment()
+    const fechaActual = Date.parse(data.currentDate)
+  
+    for (let element of data.events) {
+      let proximasFechas = Date.parse(element.date)
+  
+      if (proximasFechas < fechaActual) {
+        let div = document.createElement('div')
         div.classList.add("card")
         div.style.width = "18rem"
-        div.innerHTML = `<img src="${element.image}" class="card-img-top" style="height: 150px" alt="Cinema">
-    <div class="card-body d-flex flex-column justify-content-between">
-      <h3 class="card-title">${element.name}</h3>
-      <p class="card-text">${element.description}</p>
-      <p>Price: ${element.price} u$d</p>
-      <a href="./details.html" class="btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
-        style="color: #e0046c; background-color: #e9ecef">Detail</a>
-    </div>`
-    fragment.appendChild(div)
+        div.innerHTML = `<img src="${element.image}" class="card-img-top" style="height: 150px" alt="Race">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h3 class="card-title">${element.name}</h3>
+          <p class="card-text">${element.description}</p>
+          <p>Price: ${element.price} u$d</p>
+          <a href="./details.html" class="btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
+            style="color: #e0046c; background-color: #e9ecef">Detail</a>
+        </div>`
+        fragment.appendChild(div)
+      }
     }
-}
-card_pastEvents.appendChild(fragment)
+    card_past.appendChild(fragment)
+  }
+  //createEventCards(data)
 
 //CHECKBOX
 
@@ -74,12 +149,12 @@ function checkbox(events) {
  }
     return fragmentCheck
  }
-check_category.appendChild(checkbox(data.events))
+//check_category.appendChild(checkbox(data.events))
 
 //EVENTOS CHECKBOX
 
 
-let inputValues = []
+/*let inputValues = []
 let textSearch = ""
 const checkboxes = document.querySelectorAll('input[type=checkbox]')
 
@@ -100,11 +175,11 @@ function arrayFilter(checkArray, events){
     const eventosFiltrados = events.filter(objeto => checkArray.includes(objeto.category.split(' ').join('_')))
         return eventosFiltrados
     }
-}
+}*/
 
 //SEARCH
 
-function filterSearch(string, events){
+/*function filterSearch(string, events){
     
     if(string == ""){
        return events
@@ -118,12 +193,12 @@ const inputForm = document.getElementById('inputForm');
 inputForm.addEventListener('keyup', (e) => {
 textSearch = inputForm.value
 allFilter(data.events)
-})
+})*/
 
 //FILTROS CRUZADOS
 
-function allFilter(){
+/*function allFilter(){
     const eventosChequeados = arrayFilter(inputValues, data.events)
     const eventosBuscados = filterSearch(textSearch, eventosChequeados)
     cardCreate(eventosBuscados)
-}
+}*/

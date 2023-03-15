@@ -1,4 +1,20 @@
 //console.log([document])
+const traerDatos = async () => {
+    try{
+        const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+        console.log(response)
+        let data = await response.json()
+        console.log(data)
+        let events = data.events
+        console.log(events)
+        mostrarCard()
+
+    }catch(error) {
+        console.error('Error al traer datos')
+    }
+}
+traerDatos()
+
 
 const queryString = location.search
 const params = new URLSearchParams(queryString)
@@ -31,5 +47,5 @@ function mostrarCard(){
     </div>`
     div.appendChild(detailsCard)
 }
-mostrarCard()
+//mostrarCard()
    
