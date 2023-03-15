@@ -1,33 +1,17 @@
 //console.log([document])
-const traerDatos = async () => {
-    try{
-        const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
-        console.log(response)
-        let data = await response.json()
-        console.log(data)
-        let events = data.events
-        console.log(events)
-        mostrarCard()
-
-    }catch(error) {
-        console.error('Error al traer datos')
-    }
-}
-traerDatos()
-
 
 const queryString = location.search
 const params = new URLSearchParams(queryString)
 const id = params.get("id")
 
-const evento = data.events.find(element => element.id == id)
+const evento = data.events.find(element => element._id == id)
 
 console.log(queryString); // check the value of queryString
 console.log(params); // check the value of params
 console.log(id); // check the value of id
 console.log(evento); // check the value of evento
 
-function mostrarCard(){
+function mostrarCard(card, idContainer){
     const div = document.getElementById('detailsCard')
     let detailsCard = document.createElement('div')
     detailsCard.classList.add("card")
@@ -41,11 +25,16 @@ function mostrarCard(){
     <p class="card-text">${evento.description}</p>
     <p class="card-text">Place: ${evento.place}</p>
     <p class="card-text">Capacity : ${evento.capacity}</p>
+    <p class="card-text">Assistance : ${evento.assistance ? evento.assistance : evento.estimate}</p>
     <p class="card-text">Price: ${evento.price} S</p>
     <a href="./index.html" class="btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
         style="color: #e0046c; background-color: #e9ecef">Back</a>
     </div>`
     div.appendChild(detailsCard)
 }
-//mostrarCard()
+mostrarCard(card, idContainer)
+
+
+
+
    
