@@ -73,17 +73,17 @@ function crearTabla(assistanceUp, assistanceM, capacityM) {
 function ingreso(lists, noRepeat) {
     let ingreso = [];
     for (let i = 0; i < noRepeat.length; i++) {
-        let earn = 0;
+        let ganancia = 0;
         for (let list of lists) {
             if (list.category === noRepeat[i]) {
                 if (list.estimate !== undefined) {
-                    earn += list.price * list.estimate
+                    ganancia += list.price * list.estimate
                 } else {
-                    earn += list.price * list.assistance
+                    ganancia += list.price * list.assistance
                 }
             }
         }
-        ingreso.push(earn);
+        ingreso.push(ganancia);
     }
     return ingreso;
 }

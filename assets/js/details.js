@@ -1,40 +1,45 @@
-//console.log([document])
 
-const queryString = location.search
-const params = new URLSearchParams(queryString)
-const id = params.get("id")
+const traerDatos = async () => {
+    try{
+        const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+        console.log(response)
+        let data = await response.json()
+        console.log([data])
+        let events = data.events
+        console.log(events)
 
-const evento = data.events.find(element => element._id == id)
+        const id = new URLSearchParams(location.search).get("id");
+        console.log(id);
+        const eventObjet = data.events.find(elemento => elemento._id == id);
+        console.log(eventObjet);
+        mostrarCard(eventObjet)
 
-console.log(queryString); // check the value of queryString
-console.log(params); // check the value of params
-console.log(id); // check the value of id
-console.log(evento); // check the value of evento
 
-function mostrarCard(card, idContainer){
-    const div = document.getElementById('detailsCard')
-    let detailsCard = document.createElement('div')
-    detailsCard.classList.add("card")
-    detailsCard.classList.add("mt-3", "mb-3")
-    detailsCard.style.width = "18rem"
-    detailsCard.innerHTML = `<img src="${evento.image}" class="card-img-top" style="height: 150px" alt="Race">
-    <div class="card-body d-flex flex-column justify-content-between">
-    <h3 class="card-title">${evento.name}</h3>
-    <p class="card-text">Category: ${evento.category}</p>
-    <p class="card-text">Date: ${evento.date}</p>
-    <p class="card-text">${evento.description}</p>
-    <p class="card-text">Place: ${evento.place}</p>
-    <p class="card-text">Capacity : ${evento.capacity}</p>
-    <p class="card-text">Assistance : ${evento.assistance ? evento.assistance : evento.estimate}</p>
-    <p class="card-text">Price: ${evento.price} S</p>
-    <a href="./index.html" class="btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
-        style="color: #e0046c; background-color: #e9ecef">Back</a>
-    </div>`
-    div.appendChild(detailsCard)
+
+    }catch(error) {
+        console.error('Error al traer datos')
+    }
 }
-mostrarCard(card, idContainer)
+    traerDatos()
 
+    
+function mostrarCard(eventObjet) {
 
+    const container = document.getElementById('detailsCard')
+    let nuevoDiv = document.createElement('div')
+    nuevoDiv.className = "card mt-3 mb-3"
+    nuevoDiv.style.width ="18rem"
+    nuevoDiv.innerHTML = `<img src="${eventObjet.image}" class="card-img-top" style="height: 150px" alt="Race">
+        <div class="card-body d-flex flex-column justify-content-between">
+        <h3 class="card-title">${eventObjet.name}</h3>
+        <p class="card-text">Category: ${eventObjet.category}</p>
+        <p class="card-text">Date: ${eventObjet.date}</p>
+        <p class="card-text">${eventObjet.description}</p>
+        <p class="card-text">Place: ${eventObjet.place}</p>
+        <p class="card-text">Capacity: ${eventObjet.capacity}</p>
+        <p class="card-text">Assistance: : ${eventObjet.assistance ? eventObjet.assistance : eventObjet.estimate}</p>
+        </div>`
+        container.appendChild(nuevoDiv)
+    }
+    //mostrarCard(eventObjet)
 
-
-   

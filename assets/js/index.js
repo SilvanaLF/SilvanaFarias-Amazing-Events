@@ -87,7 +87,7 @@ function cardCreate(eventos){
         <h3 class="card-title">${element.name}</h3>
         <p class="card-text">${element.description}</p>
         <p>Price: ${element.price} $</p>
-        <a href="./details.html?id=${element.id}" class="btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
+        <a href="./details.html?id=${element._id}" class="btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
             style="color: #e0046c; background-color: #e9ecef">Detail</a>
         </div>`
         fragment.appendChild(div)
@@ -95,7 +95,7 @@ function cardCreate(eventos){
         container.appendChild(fragment)
     }else{
         let div = document.createElement('div')
-        div.innerHTML = `<p class="card-text">¡Que comience el matriarcado!</p>`
+        div.innerHTML = `<p class="card-text">There are no events to show</p>`
         container.appendChild(div)
     }
 }
@@ -129,9 +129,9 @@ let fragmentCheck = document.createDocumentFragment()
 
 //EVENTOS CHECKBOX
 
-/*let inputValues = []
+/*
 let textSearch = ""
-
+let inputValues = []
 const checkboxes = document.querySelectorAll('input[type=checkbox]')
 
  checkboxes.forEach(checkbox => {
