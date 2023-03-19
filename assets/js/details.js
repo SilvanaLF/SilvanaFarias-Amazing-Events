@@ -40,6 +40,15 @@ function mostrarCard(eventObjet) {
         <p class="card-text">Assistance: : ${eventObjet.assistance ? eventObjet.assistance : eventObjet.estimate}</p>
         </div>`
         container.appendChild(nuevoDiv)
+    let botonInicio = document.createElement('button')
+    botonInicio.className = "btn btn-dark nav-item p-2 me-1 ms-1 mb-1"
+    botonInicio.style = "color: #e0046c; background-color: #e9ecef"
+    botonInicio.textContent = "Back to Home"
+    botonInicio.addEventListener('click', () => {
+    window.location.href = "./index.html"
+    })
+        nuevoDiv.appendChild(botonInicio)
+
     }
     //mostrarCard(eventObjet)
 
