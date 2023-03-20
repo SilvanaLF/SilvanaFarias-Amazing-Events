@@ -27,6 +27,7 @@ body{
     font-size: large;
 }
 .nav-item a:hover{
+  text-decoration: underline;
     color:#e0046c;
 }
 
