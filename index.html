@@ -44,13 +44,10 @@
                     </ul>
 
                 </div>
+            </div>
+        </nav>
 
-    </header>
-
-    <main>
-
-        <!--Carousel-->
-
+        <!--CAROUSEL-->
 
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -88,20 +85,26 @@
             </button>
         </div>
 
+    </header>
+
+    <main>
+
+        <!--Div contenedor VUE-->
+        <div id="app">
+
+            <!-- CheckBox & Search -->
 
 
-        <!-- CheckBox & Search -->
-
-
-        <div class="form-container d-flex justify-content-between flex-wrap">
-            <div class="form-check form-check-inline d-flex flex-wrap p-5 w-50" style="margin-left: 5px" id="cat-check">
-                <!-- <div class="form-check form-check-inline">
+            <div class="form-container d-flex justify-content-between flex-wrap">
+                <div class="form-check form-check-inline d-flex flex-wrap p-5 w-50" style="margin-left: 5px"
+                    id="cat-check">
+                    <!-- <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">Food Fair
                 <label class="form-check-label" style="color: #d63384" for="inlineCheckbox1"></label>
                 </div> -->
-            </div>
+                </div>
 
-            <!-- <div id="formulario" class="input-group w-25 mt-5">
+                <!-- <div id="formulario" class="input-group w-25 mt-5">
               <div class="form-outline">
                 <input type="search" id="form1" class="form-control">
                 <label class="form-label" for="form1"></label>
@@ -109,23 +112,26 @@
               <a class="btn btn-dark nav-item p-2 me-1 mb-1" style="color: #d63384; background-color: black; height: 2.3em"
                 aria-current="page" href="">Search</a>
             </div> -->
-            <form id="formulario" class="row g-3 mt-4">
-                <div class="col-auto">
-                    <label for="inputPassword2" class="visually-hidden p-0 w-25 mt-5">Event</label>
-                    <input class="form-control" id="inputForm" placeholder="Event">
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-dark nav-item p-2 me-1 mb-1"
-                        style="color: #d63384; background-color: white; height: 2.3em">Search</button>
-                </div>
-            </form>
+                <form id="formulario" class="row g-3 mt-4">
+                    <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden p-0 w-25 mt-5">Event</label>
+                        <input class="form-control" id="inputForm" placeholder="Event">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-dark nav-item p-2 me-1 mb-1"
+                            style="color: #d63384; background-color: white; height: 2.3em">Search</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- CARDS -->
+
+            <div class="d-flex gap-5 p-5 justify-content-around flex-wrap" id="card_index">
+
+            </div>
+
         </div>
 
-        <!-- CARDS -->
-
-        <div class="d-flex gap-5 p-5 justify-content-around flex-wrap" id="card_index">
-
-        </div>
     </main>
 
     <footer>

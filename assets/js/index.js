@@ -1,11 +1,11 @@
 const traerDatos = async () => {
     try{
         const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
-        console.log(response)
+        //console.log(response)
         let data = await response.json()
-        console.log(data)
+        //console.log(data)
         let events = data.events
-        console.log(events)
+        //console.log(events)
         check_category.appendChild(checkbox(data.events))
         cardCreate(data.events)
         
@@ -68,6 +68,32 @@ const traerDatos = async () => {
 }
 traerDatos()
 
+//VUE
+
+const {createApp} = Vue 
+//console.log(Vue)
+
+createApp({
+data(){
+    return{
+        mensaje:"Amazing Events",
+        arrayOriginal : []
+    }
+},
+created(){
+    fetch('https://mindhub-xj03.onrender.com/api/amazing')
+    .then(response => response.json())
+    .then(data => {
+        this.arrayOriginal = data
+        console.log(this.arrayOriginal)
+    })
+    
+}
+
+
+
+
+})
 
 // CARDS
 
