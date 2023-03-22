@@ -12,13 +12,13 @@ a{
 }
 
 body{
+    overflow-x: hidden;
     background-color: #eadefa;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 .navbar{
-    height: 10vh;
     background-color: #ededf2;
 }
 
