@@ -68,32 +68,6 @@ const traerDatos = async () => {
 }
 traerDatos()
 
-//VUE
-
-const {createApp} = Vue 
-//console.log(Vue)
-
-createApp({
-data(){
-    return{
-        mensaje:"Amazing Events",
-        arrayOriginal : []
-    }
-},
-created(){
-    fetch('https://mindhub-xj03.onrender.com/api/amazing')
-    .then(response => response.json())
-    .then(data => {
-        this.arrayOriginal = data
-        console.log(this.arrayOriginal)
-    })
-    
-}
-
-
-
-
-})
 
 // CARDS
 
